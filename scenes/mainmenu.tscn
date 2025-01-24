@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2stkkvh28sc"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_b7wqe"]
+[ext_resource type="Script" path="res://color_rect.gd" id="2_410d5"]
+[ext_resource type="Texture2D" uid="uid://8q00jqh510hy" path="res://sprites/buttonbase.png" id="2_w56fr"]
+[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="3_gef18"]
+[ext_resource type="Script" path="res://label.gd" id="3_rerye"]
+[ext_resource type="Texture2D" uid="uid://ctmhdjbhc2mny" path="res://sprites/bubble-single.png" id="5_5u0ex"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_b7wqe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 640.0
+color = Color(0.010822, 0.313941, 0.549379, 1)
+script = ExtResource("2_410d5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(883, 47)
+amount = 3
+speed_scale = 0.3
+texture = ExtResource("5_5u0ex")
+emission_shape = 1
+emission_sphere_radius = 128.0
+scale_amount_max = 5.0
+hue_variation_max = 0.25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 203.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_gef18")
+theme_override_font_sizes/font_size = 50
+text = "Bubble the Bully
+"
+script = ExtResource("3_rerye")
+
+[node name="Timer" type="Timer" parent="VBoxContainer/Label"]
+wait_time = 0.2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.117647, 0.137255, 0.380392, 0.862745)
+theme_override_fonts/font = ExtResource("3_gef18")
+text = "Play"
+icon = ExtResource("2_w56fr")
+flat = true
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/icon_hover_color = Color(0.117647, 0.137255, 0.380392, 0.862745)
+theme_override_fonts/font = ExtResource("3_gef18")
+text = "Quit"
+icon = ExtResource("2_w56fr")
+flat = true
+icon_alignment = 1
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(227, 44)
+amount = 3
+speed_scale = 0.3
+texture = ExtResource("5_5u0ex")
+emission_shape = 1
+emission_sphere_radius = 128.0
+scale_amount_max = 3.0
+hue_variation_min = -0.11
+hue_variation_max = 0.2
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

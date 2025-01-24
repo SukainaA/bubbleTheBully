@@ -220,4 +220,14 @@ shape = SubResource("RectangleShape2D_iwe1b")
 one_shot = true
 autostart = true
 
+[node name="wind" type="CPUParticles2D" parent="."]
+position = Vector2(18, 346)
+amount = 6
+emission_shape = 3
+emission_rect_extents = Vector2(1, 10)
+spread = 15.0
+gravity = Vector2(100, 0)
+initial_velocity_min = 400.0
+initial_velocity_max = 600.0
+
 [connection signal="timeout" from="CarTimer" to="CarSpawner" method="_on_timer_timeout"]
