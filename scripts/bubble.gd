@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 
 	pass
-	
+
 	
 # for duct logic 
 #func getting_in(pos: Vector2):

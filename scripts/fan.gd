@@ -1,6 +1,6 @@
 extends Area2D
 
-var blow_force: float = 40.0
+var blow_force: float = 30.0
 #@export var max_blow_distance: float = 120.0
 
 func _process(_delta):

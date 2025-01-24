@@ -1,16 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=8 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
 [ext_resource type="PackedScene" uid="uid://bmktpbye2iwo3" path="res://scenes/fan.tscn" id="2_sm62d"]
+[ext_resource type="PackedScene" uid="uid://cs6mtr7bdo80h" path="res://scenes/street.tscn" id="4_i2wj4"]
+[ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1qqvl"]
+a = Vector2(-3, 714)
+b = Vector2(0, 2)
 
 [node name="Level" type="Node2D"]
 
 [node name="Classroom" parent="." instance=ExtResource("1_ew3i4")]
 position = Vector2(0, -4)
+
+[node name="Street" parent="." instance=ExtResource("4_i2wj4")]
+position = Vector2(1224, -4)
 
 [node name="Bubble" parent="." instance=ExtResource("1_2e6f3")]
 position = Vector2(227, 197)
@@ -26,3 +35,17 @@ shape = SubResource("RectangleShape2D_0f7vd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 317)
+
+[node name="classroom_limit" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
+script = ExtResource("5_rlaju")
+camera1 = NodePath("../Camera2D")
+camera2 = NodePath("../Camera2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="classroom_limit"]
+position = Vector2(1170, -1)
+shape = SubResource("SegmentShape2D_1qqvl")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(1804, 323)
+
+[connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
