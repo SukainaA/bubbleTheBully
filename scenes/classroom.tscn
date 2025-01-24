@@ -178,7 +178,6 @@ gravity_direction = Vector2(0, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingFan/Area2D"]
 position = Vector2(0.100006, 0.7)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_vyjf4")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CeilingFan"]
@@ -203,7 +202,6 @@ gravity_point_center = Vector2(0, 2)
 gravity_direction = Vector2(0, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingFan2/Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_7x4ow")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CeilingFan2"]
