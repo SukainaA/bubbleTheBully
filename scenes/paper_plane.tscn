@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://jbcxi64hmqms"]
+
+[ext_resource type="Script" path="res://scenes/paper_plane.gd" id="1_45122"]
+[ext_resource type="Texture2D" uid="uid://cklcd5831iuoh" path="res://sprites/playground/bush/airplane.png" id="1_kln2e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hlu8"]
+atlas = ExtResource("1_kln2e")
+region = Rect2(16, 0, 16, 16)
+
+[node name="PaperPlane" type="Node2D"]
+script = ExtResource("1_45122")
+
+[node name="StaticBody2D" type="RigidBody2D" parent="."]
+position = Vector2(0, -5)
+gravity_scale = 0.1
+constant_force = Vector2(-300, -60)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_8hlu8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-49, 6, 47, -36, 39, 7, 48, 12, 48, 35, 32, 49, -48, 17)

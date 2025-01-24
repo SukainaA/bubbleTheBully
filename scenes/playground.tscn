@@ -1,0 +1,239 @@
+[gd_scene load_steps=33 format=4 uid="uid://b0876nmatrug3"]
+
+[ext_resource type="Texture2D" uid="uid://bwkrl53q0kb4l" path="res://sprites/street/sky.png" id="1_5xcj6"]
+[ext_resource type="Script" path="res://scenes/playground.gd" id="1_fp8xb"]
+[ext_resource type="Texture2D" uid="uid://lfg5pesa4k56" path="res://sprites/playground/ground.png" id="2_mudoq"]
+[ext_resource type="Texture2D" uid="uid://tps1wlxqlrm" path="res://sprites/street/cloud.png" id="3_21rr7"]
+[ext_resource type="Texture2D" uid="uid://bkvwjtvypo6l" path="res://sprites/playground/lampPost.png" id="4_a8ocm"]
+[ext_resource type="Texture2D" uid="uid://clebyq474tu2f" path="res://sprites/playground/slideMarygoround.png" id="5_8obrc"]
+[ext_resource type="Texture2D" uid="uid://nyru81owxbl7" path="res://sprites/playground/schaukeln.png" id="6_oi18r"]
+[ext_resource type="Texture2D" uid="uid://cklcd5831iuoh" path="res://sprites/playground/bush/airplane.png" id="7_3m1at"]
+[ext_resource type="Texture2D" uid="uid://bqw3de33hylcl" path="res://sprites/playground/sewerExit.png" id="8_1mas6"]
+[ext_resource type="Texture2D" uid="uid://umnx24hra6dl" path="res://sprites/street/birb.png" id="9_3xhxl"]
+[ext_resource type="PackedScene" uid="uid://jbcxi64hmqms" path="res://scenes/paper_plane.tscn" id="10_hvl7w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbf17"]
+texture = ExtResource("2_mudoq")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3wkuk"]
+sources/0 = SubResource("TileSetAtlasSource_mbf17")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64p6e"]
+texture = ExtResource("3_21rr7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ltvmm"]
+texture = ExtResource("4_a8ocm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etxva"]
+texture = ExtResource("5_8obrc")
+0:0/0 = 0
+1:0/animation_frame_0/duration = 0.2
+1:0/animation_frame_1/duration = 0.2
+1:0/animation_frame_2/duration = 0.2
+1:0/animation_frame_3/duration = 0.2
+1:0/animation_frame_4/duration = 0.2
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik2um"]
+texture = ExtResource("6_oi18r")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kivig"]
+texture = ExtResource("7_3m1at")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bsk32"]
+sources/0 = SubResource("TileSetAtlasSource_64p6e")
+sources/1 = SubResource("TileSetAtlasSource_ltvmm")
+sources/2 = SubResource("TileSetAtlasSource_etxva")
+sources/3 = SubResource("TileSetAtlasSource_ik2um")
+sources/4 = SubResource("TileSetAtlasSource_kivig")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jr8df"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qionl"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5suy4"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fepbc"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxok5"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1fqu"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_148qd"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_856qd"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhmch"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li0je"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doofi"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71mu0"]
+atlas = ExtResource("9_3xhxl")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdcgb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qionl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5suy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fepbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxok5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1fqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_148qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_856qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhmch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li0je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doofi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71mu0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Playground" type="Node2D"]
+position = Vector2(0, -25)
+script = ExtResource("1_fp8xb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 379)
+rotation = 3.14159
+texture = ExtResource("1_5xcj6")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAAAAAYAAAAFAAAAAAABAAUAAAABAAAAAAABAAYAAAAEAAAAAAACAAUAAAACAAAAAAACAAYAAAAEAAAAAAADAAUAAAAAAAAAAAADAAYAAAAFAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAADAAAAAAAFAAUAAAABAAAAAAAFAAYAAAAFAAAAAAAGAAUAAAACAAAAAAAGAAYAAAADAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAFAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAFAAAAAAAJAAUAAAABAAAAAAAJAAYAAAAEAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAEAAAAAAALAAUAAAAAAAAAAAALAAYAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_3wkuk")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(78, 86)
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAALAP//AAAAAAAAAAAJAAAAAAACAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAADAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAADAP//AAACAAAAAAAEAP//AAADAAAAAAD+/wIAAAADAAAAAAALAAIAAAADAAAAAAAKAAIAAQACAAAAAAADAAIAAAAEAAAAAAAEAAIAAAACAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQABAAAAAAAKAAQAAQABAAAAAAACAAUAAQAAAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAACAAIAAQACAAAAAAAIAAUAAgABAAAAAAAJAAQAAgAAAAAAABAHAAQAAwABAAAAAAAGAAQAAwAAAAAAAAD//wUABAAAAAAAAAADAAQABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_bsk32")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(13, 474)
+scale = Vector2(13, 13)
+texture = ExtResource("8_1mas6")
+
+[node name="birds" type="Node2D" parent="."]
+position = Vector2(313, -19)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="birds"]
+sprite_frames = SubResource("SpriteFrames_jr8df")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(695, 156.376)
+scale = Vector2(1.25, 1.115)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(672.5, 173.662)
+scale = Vector2(1.0625, 0.947748)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(719, 174)
+scale = Vector2(1.0625, 0.947748)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(651.25, 191.561)
+scale = Vector2(0.843748, 0.752623)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(739, 193)
+scale = Vector2(0.843748, 0.752623)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(634.625, 205.119)
+scale = Vector2(0.546873, 0.487811)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="birds"]
+position = Vector2(754, 205)
+scale = Vector2(0.546873, 0.487811)
+sprite_frames = SubResource("SpriteFrames_vdcgb")
+autoplay = "default"
+
+[node name="PaperPlane" parent="." instance=ExtResource("10_hvl7w")]
+position = Vector2(1222, 156)
+
+[node name="PlaneSpawner" type="Node2D" parent="."]
+position = Vector2(1225, 5)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
