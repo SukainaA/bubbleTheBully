@@ -15,6 +15,7 @@ func _process(_delta):
 
 func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 	enable_fan()
 	
 func _on_body_entered(body):
