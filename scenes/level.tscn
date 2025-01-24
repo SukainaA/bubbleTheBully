@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=5 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
+[ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
 [ext_resource type="PackedScene" uid="uid://bmktpbye2iwo3" path="res://scenes/fan.tscn" id="2_sm62d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
 
 [node name="Level" type="Node2D"]
+
+[node name="Classroom" parent="." instance=ExtResource("1_ew3i4")]
+position = Vector2(0, -4)
 
 [node name="Bubble" parent="." instance=ExtResource("1_2e6f3")]
 position = Vector2(227, 197)
@@ -22,4 +26,3 @@ shape = SubResource("RectangleShape2D_0f7vd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 317)
-zoom = Vector2(0.5, 0.5)
