@@ -1,0 +1,249 @@
+[gd_scene load_steps=24 format=4 uid="uid://byphfn2np3o4c"]
+
+[ext_resource type="Texture2D" uid="uid://d2vpienfxgs2a" path="res://sprites/sewer/WALL-Sheet.png" id="1_4nlbe"]
+[ext_resource type="Texture2D" uid="uid://dmdqvcbn21uw" path="res://sprites/sewer/FLOOR.png" id="2_mjcry"]
+[ext_resource type="Texture2D" uid="uid://ckkwj8k1fhmyl" path="res://sprites/sewer/WALLSNPIPES-Sheet.png" id="3_chcxa"]
+[ext_resource type="Texture2D" uid="uid://ergpqgd83vcb" path="res://sprites/sewer/WALL-Sheetdark.png" id="3_hvsan"]
+[ext_resource type="Texture2D" uid="uid://cykvahcwm8psy" path="res://sprites/sewer/PIPE.png" id="4_022bw"]
+[ext_resource type="Texture2D" uid="uid://b1bvc88a7nd48" path="res://sprites/sewer/water.png" id="5_qw8lb"]
+[ext_resource type="Shader" path="res://scenes/sewer.gdshader" id="7_gce8n"]
+[ext_resource type="PackedScene" uid="uid://bs0fgg1j2wkds" path="res://scenes/maus.tscn" id="7_kkdrp"]
+[ext_resource type="PackedScene" uid="uid://bql8ckk10gv6q" path="res://scenes/fish_bone.tscn" id="8_yley0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr8t6"]
+texture = ExtResource("2_mjcry")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2f4tl"]
+sources/0 = SubResource("TileSetAtlasSource_qr8t6")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwcyf"]
+texture = ExtResource("1_4nlbe")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ku3co"]
+texture = ExtResource("2_mjcry")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoc4l"]
+texture = ExtResource("3_hvsan")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2pvm"]
+texture = ExtResource("3_chcxa")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bph4a"]
+texture = ExtResource("4_022bw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sioss"]
+texture = ExtResource("4_022bw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbivk"]
+texture = ExtResource("5_qw8lb")
+0:0/animation_columns = 16
+0:0/animation_frame_0/duration = 0.2
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 0.2
+0:0/animation_frame_4/duration = 0.2
+0:0/animation_frame_5/duration = 0.2
+0:0/animation_frame_6/duration = 0.2
+0:0/animation_frame_7/duration = 0.2
+0:0/animation_frame_8/duration = 0.2
+0:0/animation_frame_9/duration = 0.2
+0:0/animation_frame_10/duration = 0.2
+0:0/animation_frame_11/duration = 0.2
+0:0/animation_frame_12/duration = 0.2
+0:0/animation_frame_13/duration = 0.2
+0:0/animation_frame_14/duration = 0.2
+0:0/animation_frame_15/duration = 0.2
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5n6rg"]
+sources/0 = SubResource("TileSetAtlasSource_qwcyf")
+sources/1 = SubResource("TileSetAtlasSource_ku3co")
+sources/3 = SubResource("TileSetAtlasSource_f2pvm")
+sources/5 = SubResource("TileSetAtlasSource_bph4a")
+sources/6 = SubResource("TileSetAtlasSource_sioss")
+sources/9 = SubResource("TileSetAtlasSource_rbivk")
+sources/10 = SubResource("TileSetAtlasSource_yoc4l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5swru"]
+shader = ExtResource("7_gce8n")
+shader_parameter/angle = -0.14659
+shader_parameter/position = -0.167
+shader_parameter/spread = 0.923
+shader_parameter/cutoff = -0.144
+shader_parameter/falloff = 0.2
+shader_parameter/edge_fade = 0.068
+shader_parameter/speed = 1.509
+shader_parameter/ray1_density = 20.0
+shader_parameter/ray2_density = 34.643
+shader_parameter/ray2_intensity = 0.215
+shader_parameter/ray_color = Color(0.34902, 0.635294, 0.352941, 0.156863)
+shader_parameter/hdr = false
+shader_parameter/seed = 0.935
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbvyv"]
+texture = ExtResource("4_022bw")
+0:0/animation_frame_0/duration = 0.2
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 0.2
+0:0/animation_frame_4/duration = 0.2
+0:0/animation_frame_5/duration = 0.2
+0:0/animation_frame_6/duration = 0.2
+0:0/animation_frame_7/duration = 0.2
+0:0/animation_frame_8/duration = 0.2
+0:0/animation_frame_9/duration = 0.2
+0:0/animation_frame_10/duration = 0.2
+0:0/animation_frame_11/duration = 0.2
+0:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nl1la"]
+texture = ExtResource("3_chcxa")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_snyjv"]
+sources/0 = SubResource("TileSetAtlasSource_pbvyv")
+sources/1 = SubResource("TileSetAtlasSource_nl1la")
+
+[node name="Sewer" type="Node2D"]
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAAVAAUAAAAAAAAAAAAWAAUAAAAAAAAAAAAXAAUAAAAAAAAAAAAXAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAATAAYAAAAAAAAAAAASAAYAAAAAAAAAAAARAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_2f4tl")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAAAAAACgACAAAAAAABAAAACgABAAAAAAACAAAACgACAAAAAAADAAAACgAAAAAAAAAEAAAACgACAAAAAAAFAAAACgAAAAAAAAAGAAAACgABAAAAAAAHAAAACgAAAAAAAAAIAAAACgAAAAAAAAAJAAAACgAAAAAAAAAKAAAACgACAAAAAAALAAAACgAAAAAAAAALAAEACgACAAAAAAALAAIACgAAAAAAAAALAAMACgAAAAAAAAALAAQACgABAAAAAAAKAAQACgAAAAAAAAAJAAQACgAAAAAAAAAIAAQACgABAAAAAAAHAAQACgABAAAAAAAGAAQACgAAAAAAAAAFAAQACgAAAAAAAAAEAAQACgABAAAAAAADAAQACgAAAAAAAAACAAQACgABAAAAAAABAAQACgAAAAAAAAAAAAQACgACAAAAAAAAAAMACgACAAAAAAAAAAIACgAAAAAAAAAAAAEACgACAAAAAAABAAEACgAAAAAAAAACAAEACgABAAAAAAADAAEACgACAAAAAAAEAAEACgAAAAAAAAAFAAEACgABAAAAAAAGAAEACgAAAAAAAAAHAAEACgAAAAAAAAAIAAEACgABAAAAAAAJAAEACgAAAAAAAAAKAAEACgACAAAAAAAKAAIACgABAAAAAAAKAAMACgACAAAAAAAJAAMACgAAAAAAAAAIAAMACgAAAAAAAAAHAAMACgABAAAAAAAGAAMACgAAAAAAAAAFAAMACgABAAAAAAAEAAMACgACAAAAAAADAAMACgAAAAAAAAACAAMACgACAAAAAAABAAMACgABAAAAAAABAAIACgAAAAAAAAACAAIACgAAAAAAAAADAAIACgACAAAAAAAEAAIACgAAAAAAAAAFAAIACgAAAAAAAAAGAAIACgABAAAAAAAHAAIACgABAAAAAAAIAAIACgACAAAAAAAJAAIACgABAAAAAAAAAAYACQAAAAAAAAABAAYACQAAAAAAAAACAAYACQAAAAAAAAADAAYACQAAAAAAAAAEAAYACQAAAAAAAAAFAAYACQAAAAAAAAAGAAYACQAAAAAAAAAHAAYACQAAAAAAAAAIAAYACQAAAAAAAAAJAAYACQAAAAAAAAAKAAYACQAAAAAAAAALAAYACQAAAAAAAAAMAAQACgACAAAAAAANAAQACgAAAAAAAAAOAAQACgABAAAAAAAPAAQACgABAAAAAAAQAAQACgAAAAAAAAARAAQACgACAAAAAAASAAQACgACAAAAAAATAAQACgACAAAAAAAUAAMACgAAAAAAAAAVAAMACgAAAAAAAAAWAAMACgABAAAAAAAXAAMACgAAAAAAAAAXAAQACgAAAAAAAAAWAAQACgACAAAAAAAVAAQACgABAAAAAAAUAAQACgAAAAAAAAASAAMACgACAAAAAAATAAMACgABAAAAAAARAAMACgAAAAAAAAAQAAMACgABAAAAAAAPAAMACgABAAAAAAAOAAMACgACAAAAAAANAAMACgACAAAAAAAMAAMACgAAAAAAAAAMAAIACgABAAAAAAAMAAEACgABAAAAAAAMAAAACgACAAAAAAANAAAACgAAAAAAAAAOAAAACgABAAAAAAAPAAAACgACAAAAAAAQAAAACgACAAAAAAARAAAACgABAAAAAAASAAAACgAAAAAAAAATAAAACgAAAAAAAAAUAAAACgACAAAAAAAVAAAACgAAAAAAAAAWAAAACgACAAAAAAAXAAAACgAAAAAAAAAXAAEACgAAAAAAAAAXAAIACgACAAAAAAAWAAIACgAAAAAAAAAVAAIACgABAAAAAAAUAAIACgAAAAAAAAATAAIACgAAAAAAAAASAAIACgABAAAAAAARAAIACgACAAAAAAAQAAIACgAAAAAAAAAPAAIACgACAAAAAAAOAAIACgABAAAAAAANAAIACgACAAAAAAANAAEACgACAAAAAAAOAAEACgACAAAAAAAPAAEACgABAAAAAAAQAAEACgABAAAAAAARAAEACgABAAAAAAASAAEACgAAAAAAAAATAAEACgACAAAAAAAUAAEACgABAAAAAAAVAAEACgABAAAAAAAWAAEACgABAAAAAAAXAAYACQAAAAAAAAAWAAYACQAAAAAAAAAVAAYACQAAAAAAAAAUAAYACQAAAAAAAAATAAYACQAAAAAAAAASAAYACQAAAAAAAAARAAYACQAAAAAAAAAQAAYACQAAAAAAAAAPAAYACQAAAAAAAAAOAAYACQAAAAAAAAANAAYACQAAAAAAAAAMAAYACQAAAAAAAAA=")
+tile_set = SubResource("TileSet_5n6rg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5swru")
+offset_right = 2305.0
+offset_bottom = 671.0
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AAAAAAEAAAAMAAAAAAAAAAAAAAANAAAAAAABAAEAAAAAAAAAAAAJAAEAAAAMAAAAAAAHAAIAAAAAAAAAABAIAAIAAAAMAAAAABAIAAEAAAANAAAAABAIAAAAAAANAAAAABAJAAAAAAANAAAAAAAKAAEAAAAAAAAAAAARAAMAAAAAAAAAABACAAAAAQACAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQABAAAAAAAAAAQAAQAAAAAAACABAAQAAQAAAAAAACACAAQAAQABAAAAACAIAAQAAQABAAAAAFAKAAAAAQACAAAAAAALAAAAAQABAAAAAAAMAAAAAQACAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQABAAAAAAARAAIAAQABAAAAAFARAAEAAQACAAAAAFAJAAQAAQABAAAAAGAJAAUAAQAAAAAAAGAJAAMAAQABAAAAAEAJAAIAAQABAAAAAGAAAAMAAQADAAAAAAAIAAMAAQACAAAAAFACAAUAAQABAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_snyjv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1130, 665)
+offset = Vector2(0, -320)
+zoom = Vector2(0.49, 0.49)
+
+[node name="Mice" type="Node2D" parent="."]
+
+[node name="Maus" parent="Mice" instance=ExtResource("7_kkdrp")]
+position = Vector2(352, 533)
+
+[node name="Maus2" parent="Mice" instance=ExtResource("7_kkdrp")]
+position = Vector2(587, 534)
+
+[node name="Maus3" parent="Mice" instance=ExtResource("7_kkdrp")]
+position = Vector2(805, 534)
+
+[node name="fishes" type="Node2D" parent="."]
+
+[node name="FishBone" parent="fishes" instance=ExtResource("8_yley0")]
+position = Vector2(1652, 725)
+
+[node name="FishBone2" parent="fishes" instance=ExtResource("8_yley0")]
+position = Vector2(1808, 725)
+
+[node name="FishBone3" parent="fishes" instance=ExtResource("8_yley0")]
+position = Vector2(1955, 725)
+
+[node name="FishBone4" parent="fishes" instance=ExtResource("8_yley0")]
+position = Vector2(2115, 721)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(232, 227)
+amount = 1
+randomness = 0.55
+scale_amount_max = 16.27
+color = Color(0.33459, 0.488927, 0.182617, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(923, 359)
+amount = 1
+randomness = 0.55
+scale_amount_max = 16.27
+color = Color(0.33459, 0.488927, 0.182617, 1)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(1388, 224)
+amount = 1
+randomness = 0.55
+scale_amount_max = 16.27
+color = Color(0.33459, 0.488927, 0.182617, 1)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+position = Vector2(2204, 483)
+amount = 1
+randomness = 0.55
+scale_amount_max = 16.27
+color = Color(0.33459, 0.488927, 0.182617, 1)
+
+[node name="dust" type="CPUParticles2D" parent="."]
+position = Vector2(1130, 378)
+amount = 500
+emission_shape = 3
+emission_rect_extents = Vector2(1200, 400)
+gravity = Vector2(0, 0)
+angular_velocity_min = -1.0
+angular_velocity_max = 1.0
+radial_accel_min = 29.56
+radial_accel_max = 29.56
+scale_amount_max = 6.91
+color = Color(0.156863, 0.607843, 0.164706, 0.301961)
