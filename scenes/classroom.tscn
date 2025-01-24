@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dnp28v6smnuro"]
+[gd_scene load_steps=37 format=4 uid="uid://dnp28v6smnuro"]
 
 [ext_resource type="Texture2D" uid="uid://dp0un5ot3yckl" path="res://sprites/school_wall_floor.png" id="1_glrpm"]
 [ext_resource type="Texture2D" uid="uid://bmqrvy7fh3ksf" path="res://sprites/window.png" id="2_jad6f"]
@@ -107,6 +107,14 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyjf4"]
+radius = 6.7
+height = 23.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x4ow"]
+radius = 6.4
+height = 22.4
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxdbc"]
 size = Vector2(70, 315)
 
@@ -163,12 +171,49 @@ sprite_frames = SubResource("SpriteFrames_thttf")
 autoplay = "default"
 frame_progress = 0.294221
 
+[node name="Area2D" type="Area2D" parent="CeilingFan"]
+gravity_space_override = 1
+gravity_point_center = Vector2(0, 2)
+gravity_direction = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingFan/Area2D"]
+position = Vector2(0.100006, 0.7)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_vyjf4")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CeilingFan"]
+amount = 4
+speed_scale = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(8, 1)
+spread = 15.0
+gravity = Vector2(0, 50)
+color = Color(0.839216, 1, 1, 1)
+
 [node name="CeilingFan2" type="AnimatedSprite2D" parent="."]
 position = Vector2(423, 40)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_thttf")
 autoplay = "default"
 frame_progress = 0.694766
+
+[node name="Area2D" type="Area2D" parent="CeilingFan2"]
+gravity_space_override = 1
+gravity_point_center = Vector2(0, 2)
+gravity_direction = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingFan2/Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_7x4ow")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CeilingFan2"]
+amount = 4
+speed_scale = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(8, 1)
+spread = 15.0
+gravity = Vector2(0, 50)
+color = Color(0.839216, 1, 1, 1)
 
 [node name="ObstacleCollision" type="StaticBody2D" parent="."]
 visible = false
