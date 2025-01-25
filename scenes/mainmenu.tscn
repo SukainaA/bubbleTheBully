@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://mainmenu.gd" id="1_b7wqe"]
 [ext_resource type="Script" path="res://color_rect.gd" id="2_410d5"]
-[ext_resource type="Texture2D" uid="uid://dmo8mxl8tlamm" path="res://sprites/buttonbase.png" id="2_w56fr"]
-[ext_resource type="FontFile" uid="uid://bq162f5a7nrf2" path="res://sprites/PixelOperator8-Bold.ttf" id="3_gef18"]
+[ext_resource type="Texture2D" uid="uid://8q00jqh510hy" path="res://sprites/buttonbase.png" id="2_w56fr"]
+[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="3_gef18"]
 [ext_resource type="Script" path="res://label.gd" id="3_rerye"]
-[ext_resource type="Texture2D" uid="uid://c444kbelmbu73" path="res://sprites/bubble-single.png" id="5_5u0ex"]
-[ext_resource type="AudioStream" uid="uid://58lgmgfwqo8j" path="res://Bubbles Sound Effect [ ezmp3.cc ].mp3" id="7_fbj66"]
+[ext_resource type="Texture2D" uid="uid://ctmhdjbhc2mny" path="res://sprites/bubble-single.png" id="5_5u0ex"]
+[ext_resource type="AudioStream" uid="uid://bv8x23mh8mvm1" path="res://Bubbles Sound Effect [ ezmp3.cc ].mp3" id="7_fbj66"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
