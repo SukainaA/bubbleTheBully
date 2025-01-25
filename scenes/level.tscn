@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=13 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
 [ext_resource type="PackedScene" uid="uid://bmktpbye2iwo3" path="res://scenes/fan.tscn" id="2_sm62d"]
-[ext_resource type="PackedScene" uid="uid://cs6mtr7bdo80h" path="res://scenes/street.tscn" id="4_i2wj4"]
+[ext_resource type="PackedScene" uid="uid://deqdxwrad1e6k" path="res://scenes/street.tscn" id="4_i2wj4"]
 [ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
+[ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
+[ext_resource type="Script" path="res://scripts/restart_button.gd" id="7_4c6cn"]
+[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
+[ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -12,6 +16,9 @@ size = Vector2(1134, 79)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1qqvl"]
 a = Vector2(-3, 714)
 b = Vector2(0, 2)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fb4io"]
+radius = 128.25
 
 [node name="Level" type="Node2D"]
 
@@ -21,8 +28,11 @@ position = Vector2(0, -4)
 [node name="Street" parent="." instance=ExtResource("4_i2wj4")]
 position = Vector2(1224, -4)
 
+[node name="Sewer" parent="." instance=ExtResource("6_6svhg")]
+position = Vector2(2430, -10)
+
 [node name="Bubble" parent="." instance=ExtResource("1_2e6f3")]
-position = Vector2(227, 197)
+position = Vector2(781, 206)
 
 [node name="Area2D" parent="." instance=ExtResource("2_sm62d")]
 position = Vector2(535, 225)
@@ -48,4 +58,34 @@ shape = SubResource("SegmentShape2D_1qqvl")
 [node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2(1804, 323)
 
+[node name="Camera2D3" type="Camera2D" parent="."]
+position = Vector2(3013, 326)
+
+[node name="Camera2D4" type="Camera2D" parent="."]
+position = Vector2(4169, 326)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 139.0
+offset_bottom = 40.0
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_fwbkr")
+text = "Restart"
+script = ExtResource("7_4c6cn")
+
+[node name="StreetLimit" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(2328, 470)
+script = ExtResource("9_0wy3s")
+camera1 = NodePath("../Camera2D3")
+camera2 = NodePath("../Camera2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StreetLimit"]
+position = Vector2(-48, -37)
+shape = SubResource("CircleShape2D_fb4io")
+
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
+[connection signal="body_entered" from="StreetLimit" to="StreetLimit" method="_on_body_entered"]
