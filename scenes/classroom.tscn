@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dnp28v6smnuro"]
+[gd_scene load_steps=52 format=4 uid="uid://dnp28v6smnuro"]
 
 [ext_resource type="Texture2D" uid="uid://dp0un5ot3yckl" path="res://sprites/school_wall_floor.png" id="1_glrpm"]
 [ext_resource type="Texture2D" uid="uid://bmqrvy7fh3ksf" path="res://sprites/window.png" id="2_jad6f"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://ckgoqojicbqdl" path="res://sprites/bookshelf/shelf_sheet.png" id="6_3qd1v"]
 [ext_resource type="Texture2D" uid="uid://cttplap30ikgj" path="res://sprites/desk.png" id="7_rk0b5"]
 [ext_resource type="Texture2D" uid="uid://xl5dt1vw8y0c" path="res://sprites/ceiling_fan/ceilFan.png" id="8_uckm0"]
+[ext_resource type="Texture2D" uid="uid://dpnd3y1trh3u0" path="res://sprites/pushingP.png" id="9_vnrmb"]
+[ext_resource type="Script" path="res://scenes/animated_sprite_2d.gd" id="10_b3aek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b56fv"]
 texture = ExtResource("1_glrpm")
@@ -145,6 +147,113 @@ size = Vector2(68, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5jwb"]
 size = Vector2(1200, 213)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8v6n"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_321rn"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyn7g"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_301js"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82wx2"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i64p7"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6gbi"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pusjy"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tt7v"]
+atlas = ExtResource("9_vnrmb")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4vmj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8v6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_321rn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyn7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_301js")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82wx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i64p7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6gbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pusjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tt7v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_bvm33"]
+resource_name = "pgone"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vqo1m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xs2x5"]
+_data = {
+"RESET": SubResource("Animation_vqo1m"),
+"pgone": SubResource("Animation_bvm33")
+}
+
 [node name="Classroom" type="Node2D"]
 
 [node name="BG" type="TileMapLayer" parent="."]
@@ -263,3 +372,16 @@ shape = SubResource("RectangleShape2D_jswgd")
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="ObstacleCollision"]
 position = Vector2(600, 612.5)
 shape = SubResource("RectangleShape2D_y5jwb")
+
+[node name="P" type="AnimatedSprite2D" parent="."]
+position = Vector2(232, 61)
+scale = Vector2(5.6875, 5.6875)
+sprite_frames = SubResource("SpriteFrames_a4vmj")
+autoplay = "default"
+frame_progress = 0.406269
+script = ExtResource("10_b3aek")
+
+[node name="playerP" type="AnimationPlayer" parent="P"]
+libraries = {
+"": SubResource("AnimationLibrary_xs2x5")
+}
