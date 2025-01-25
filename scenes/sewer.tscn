@@ -1,16 +1,16 @@
 [gd_scene load_steps=41 format=4 uid="uid://byphfn2np3o4c"]
 
-[ext_resource type="Texture2D" uid="uid://d2vpienfxgs2a" path="res://sprites/sewer/WALL-Sheet.png" id="1_4nlbe"]
-[ext_resource type="Texture2D" uid="uid://dmdqvcbn21uw" path="res://sprites/sewer/FLOOR.png" id="2_mjcry"]
-[ext_resource type="Texture2D" uid="uid://ckkwj8k1fhmyl" path="res://sprites/sewer/WALLSNPIPES-Sheet.png" id="3_chcxa"]
-[ext_resource type="Texture2D" uid="uid://ergpqgd83vcb" path="res://sprites/sewer/WALL-Sheetdark.png" id="3_hvsan"]
-[ext_resource type="Texture2D" uid="uid://cykvahcwm8psy" path="res://sprites/sewer/PIPE.png" id="4_022bw"]
-[ext_resource type="Texture2D" uid="uid://b1bvc88a7nd48" path="res://sprites/sewer/water.png" id="5_qw8lb"]
+[ext_resource type="Texture2D" uid="uid://ck6s0sfi2dai7" path="res://sprites/sewer/WALL-Sheet.png" id="1_4nlbe"]
+[ext_resource type="Texture2D" uid="uid://cqk168ouyxufc" path="res://sprites/sewer/FLOOR.png" id="2_mjcry"]
+[ext_resource type="Texture2D" uid="uid://dr2facpg3h5jt" path="res://sprites/sewer/WALLSNPIPES-Sheet.png" id="3_chcxa"]
+[ext_resource type="Texture2D" uid="uid://y4btsbvxhjbl" path="res://sprites/sewer/WALL-Sheetdark.png" id="3_hvsan"]
+[ext_resource type="Texture2D" uid="uid://bff8p8hr0oxwu" path="res://sprites/sewer/PIPE.png" id="4_022bw"]
+[ext_resource type="Texture2D" uid="uid://c4oi8ap2yxrxx" path="res://sprites/sewer/water.png" id="5_qw8lb"]
 [ext_resource type="Shader" path="res://sewer.gdshader" id="7_gce8n"]
 [ext_resource type="PackedScene" uid="uid://bs0fgg1j2wkds" path="res://scenes/maus.tscn" id="7_kkdrp"]
 [ext_resource type="PackedScene" uid="uid://bql8ckk10gv6q" path="res://scenes/fish_bone.tscn" id="8_yley0"]
 [ext_resource type="PackedScene" uid="uid://c68qgl137j7i4" path="res://scenes/lives.tscn" id="10_f2ifo"]
-[ext_resource type="Texture2D" uid="uid://figxtsa23520" path="res://sprites/arrowDown.png" id="11_myjgf"]
+[ext_resource type="Texture2D" uid="uid://dvciyrh52u1ya" path="res://sprites/arrowDown.png" id="11_myjgf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr8t6"]
 texture = ExtResource("2_mjcry")
@@ -164,7 +164,7 @@ size = Vector2(2315, 20)
 size = Vector2(533.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lovi"]
-size = Vector2(114, 67.5)
+size = Vector2(251, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auv7b"]
 size = Vector2(77, 353)
@@ -275,16 +275,13 @@ position = Vector2(805, 534)
 [node name="fishes" type="Node2D" parent="."]
 
 [node name="FishBone" parent="fishes" instance=ExtResource("8_yley0")]
-position = Vector2(1652, 725)
+position = Vector2(1606, 724)
 
 [node name="FishBone2" parent="fishes" instance=ExtResource("8_yley0")]
-position = Vector2(1808, 725)
+position = Vector2(1762, 724)
 
 [node name="FishBone3" parent="fishes" instance=ExtResource("8_yley0")]
-position = Vector2(1955, 725)
-
-[node name="FishBone4" parent="fishes" instance=ExtResource("8_yley0")]
-position = Vector2(2115, 721)
+position = Vector2(1909, 724)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(232, 227)
@@ -369,24 +366,12 @@ shape = SubResource("RectangleShape2D_2qvxr")
 position = Vector2(1009, 318)
 shape = SubResource("RectangleShape2D_1lovi")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="bounds"]
-position = Vector2(146, 189)
-shape = SubResource("RectangleShape2D_1lovi")
-
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="bounds"]
-position = Vector2(2274, 445)
-shape = SubResource("RectangleShape2D_1lovi")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="bounds"]
-position = Vector2(1302, 189)
+position = Vector2(2205.5, 435)
 shape = SubResource("RectangleShape2D_1lovi")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="bounds"]
 position = Vector2(1098.5, 166.5)
-shape = SubResource("RectangleShape2D_auv7b")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="bounds"]
-position = Vector2(54, 37)
 shape = SubResource("RectangleShape2D_auv7b")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="bounds"]

@@ -16,4 +16,4 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	car_spawner.add_child(CAR.instantiate())
-	timer.start(randf_range(.8,2.0))
+	timer.start(randf_range(3.0,4.0))

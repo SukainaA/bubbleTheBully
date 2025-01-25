@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://deqdxwrad1e6k" path="res://scenes/street.tscn" id="4_i2wj4"]
 [ext_resource type="Script" path="res://scripts/classroom_area.gd" id="5_rlaju"]
 [ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
-[ext_resource type="FontFile" uid="uid://bq162f5a7nrf2" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
+[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
 [ext_resource type="Script" path="res://scripts/playground_exit.gd" id="13_8c6px"]
-[ext_resource type="AudioStream" uid="uid://b3bt6du3ffg30" path="res://ggj25music.mp3" id="13_10p4v"]
+[ext_resource type="AudioStream" uid="uid://7sjiv4xxvwix" path="res://ggj25music.mp3" id="13_10p4v"]
 [ext_resource type="PackedScene" uid="uid://bebeewgxp4vif" path="res://scenes/bully.tscn" id="15_7gca0"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="15_ir1no"]
 
@@ -27,7 +27,7 @@ b = Vector2(0, 2)
 radius = 49.0408
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6qdko"]
-radius = 63.2851
+radius = 79.0569
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hnwc3"]
 radius = 41.1947
@@ -102,7 +102,7 @@ camera1 = NodePath("../Camera2D4")
 camera2 = NodePath("../Camera2D3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit"]
-position = Vector2(-272, 285)
+position = Vector2(-288, 281)
 shape = SubResource("CircleShape2D_6qdko")
 
 [node name="sewerlimit2" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
