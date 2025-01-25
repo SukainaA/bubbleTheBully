@@ -8,7 +8,7 @@ radius = 20.025
 
 [node name="Bubble" type="RigidBody2D" groups=["bubble"]]
 mass = 0.06
-gravity_scale = 0.3
+gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 linear_damp = 1.0

@@ -13,7 +13,7 @@ script = ExtResource("1_45122")
 [node name="StaticBody2D" type="RigidBody2D" parent="."]
 position = Vector2(0, -5)
 gravity_scale = 0.1
-constant_force = Vector2(-300, -60)
+constant_force = Vector2(-500, -300)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(3, 3)

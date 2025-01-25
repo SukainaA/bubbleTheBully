@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=17 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
+[ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -28,20 +29,20 @@ b = Vector2(5, 647)
 
 [node name="Level" type="Node2D"]
 
-[node name="Playground" parent="." instance=ExtResource("3_t2del")]
-position = Vector2(4743, -12)
-
 [node name="Classroom" parent="." instance=ExtResource("1_ew3i4")]
 position = Vector2(0, -4)
 
 [node name="Street" parent="." instance=ExtResource("4_i2wj4")]
 position = Vector2(1224, -4)
 
+[node name="Playground" parent="." instance=ExtResource("3_t2del")]
+position = Vector2(4743, -12)
+
 [node name="Sewer" parent="." instance=ExtResource("6_6svhg")]
 position = Vector2(2430, -10)
 
 [node name="Bubble" parent="." instance=ExtResource("1_2e6f3")]
-position = Vector2(781, 206)
+position = Vector2(155, 36)
 
 [node name="Area2D" parent="." instance=ExtResource("2_sm62d")]
 position = Vector2(535, 225)
@@ -110,7 +111,7 @@ shape = SubResource("SegmentShape2D_csawo")
 
 [node name="sewerlimit2" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
 position = Vector2(4730, 17)
-script = ExtResource("10_xjxul")
+script = ExtResource("12_4hror")
 camera1 = NodePath("../Camera2D5")
 camera2 = NodePath("../Camera2D4")
 

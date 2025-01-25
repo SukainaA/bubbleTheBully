@@ -16,4 +16,6 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		body.global_position.x = 1275 * 3
 		body.global_position.y = 75
+		body.gravity_scale = 0
+
 		

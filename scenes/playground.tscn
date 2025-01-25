@@ -227,9 +227,11 @@ sprite_frames = SubResource("SpriteFrames_vdcgb")
 autoplay = "default"
 
 [node name="PaperPlane" parent="." instance=ExtResource("10_hvl7w")]
+visible = false
 position = Vector2(1222, 156)
 
 [node name="PlaneSpawner" type="Node2D" parent="."]
+visible = false
 position = Vector2(1225, 5)
 
 [node name="Timer" type="Timer" parent="."]

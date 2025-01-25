@@ -11,5 +11,5 @@ func _on_body_entered(body: Node2D) -> void:
 		camera1.enabled = false
 		camera2.enabled = true
 		body.global_position.x = 1275
-		body.global_position.y = 75
-		
+		body.position.y = 65
+		body.gravity_scale = 0
