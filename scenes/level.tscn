@@ -26,7 +26,7 @@ b = Vector2(0, 2)
 radius = 49.0408
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6qdko"]
-radius = 36.0
+radius = 63.2851
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hnwc3"]
 radius = 41.1947
@@ -101,7 +101,7 @@ camera1 = NodePath("../Camera2D4")
 camera2 = NodePath("../Camera2D3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit"]
-position = Vector2(-237, 286)
+position = Vector2(-272, 285)
 shape = SubResource("CircleShape2D_6qdko")
 
 [node name="sewerlimit2" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
