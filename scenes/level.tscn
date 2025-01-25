@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
 [ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
 [ext_resource type="Script" path="res://scripts/restart_button.gd" id="7_4c6cn"]
-[ext_resource type="FontFile" uid="uid://bq162f5a7nrf2" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
+[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
