@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	var plane = PAPER_PLANE.instantiate()
 	plane.position = plane_spawner.position
-	print(plane.position)
+
 	plane_spawner.add_child(plane)
 	timer.start(randf_range(1.0, 2.2))
 

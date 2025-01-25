@@ -1,18 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=22 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
 [ext_resource type="PackedScene" uid="uid://bmktpbye2iwo3" path="res://scenes/fan.tscn" id="2_sm62d"]
 [ext_resource type="PackedScene" uid="uid://b0876nmatrug3" path="res://scenes/playground.tscn" id="3_t2del"]
 [ext_resource type="PackedScene" uid="uid://deqdxwrad1e6k" path="res://scenes/street.tscn" id="4_i2wj4"]
-[ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
+[ext_resource type="Script" path="res://scripts/classroom_area.gd" id="5_rlaju"]
 [ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
-[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
+[ext_resource type="FontFile" uid="uid://bq162f5a7nrf2" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
-[ext_resource type="Script" path="res://scenes/playground_exit.gd" id="13_8c6px"]
-[ext_resource type="AudioStream" uid="uid://7sjiv4xxvwix" path="res://ggj25music.mp3" id="13_10p4v"]
+[ext_resource type="Script" path="res://scripts/playground_exit.gd" id="13_8c6px"]
+[ext_resource type="AudioStream" uid="uid://b3bt6du3ffg30" path="res://ggj25music.mp3" id="13_10p4v"]
+[ext_resource type="PackedScene" uid="uid://bebeewgxp4vif" path="res://scenes/bully.tscn" id="15_7gca0"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="15_ir1no"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
@@ -160,6 +161,18 @@ text = "Game Over"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_fwbkr")
 text = "Restart"
+
+[node name="Bully" parent="." instance=ExtResource("15_7gca0")]
+position = Vector2(1063, 569)
+
+[node name="Bully2" parent="." instance=ExtResource("15_7gca0")]
+position = Vector2(2309, 490)
+
+[node name="Bully3" parent="." instance=ExtResource("15_7gca0")]
+position = Vector2(3438, 495)
+
+[node name="Bully4" parent="." instance=ExtResource("15_7gca0")]
+position = Vector2(4611, 473)
 
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
 [connection signal="body_entered" from="StreetLimit" to="StreetLimit" method="_on_body_entered"]

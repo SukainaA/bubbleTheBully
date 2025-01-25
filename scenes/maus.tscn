@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bs0fgg1j2wkds"]
 
-[ext_resource type="Script" path="res://scenes/maus.gd" id="1_a4j4y"]
+[ext_resource type="Script" path="res://scripts/maus.gd" id="1_a4j4y"]
 [ext_resource type="Texture2D" uid="uid://cch0uqxkbmuya" path="res://sprites/sewer/maus.png" id="1_ab25k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yobke"]

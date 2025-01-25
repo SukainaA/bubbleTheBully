@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://bebeewgxp4vif"]
+
+[ext_resource type="Script" path="res://scripts/bully.gd" id="1_637ed"]
+[ext_resource type="Texture2D" uid="uid://x3tq6colev74" path="res://sprites/bully.png" id="2_shdrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uab35"]
+atlas = ExtResource("2_shdrn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5nti"]
+atlas = ExtResource("2_shdrn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_synwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uab35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5nti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhqlr"]
+atlas = ExtResource("2_shdrn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh72y"]
+size = Vector2(111, 1389)
+
+[sub_resource type="Animation" id="Animation_ihc27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -69)]
+}
+
+[sub_resource type="Animation" id="Animation_lhj3y"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -69), Vector2(1184, -69), Vector2(1184, -2000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8x1q"]
+_data = {
+"RESET": SubResource("Animation_ihc27"),
+"run": SubResource("Animation_lhj3y")
+}
+
+[node name="Bully" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_637ed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -69)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_synwf")
+autoplay = "default"
+frame_progress = 0.191663
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -72)
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_xhqlr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-587, -103.5)
+shape = SubResource("RectangleShape2D_jh72y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b8x1q")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

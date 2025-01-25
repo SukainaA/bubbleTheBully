@@ -15,6 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pop_spawn_bubble"):
+		freeze = false
 		gravity_scale = 0.3
 
 func bubble_pop():
@@ -26,12 +27,13 @@ func bubble_pop():
 
 func _on_body_entered(body: Node) -> void:
 	print(lives)
-	if ! body.is_in_group("fan") && lives != 0:
+	if ! body.is_in_group("fan") && lives > 0:
 		global_position.x = 100 + (1275 * Debug.curr_scene)
 		global_position.y = 90
 		gravity_scale = 0
 		linear_velocity.x = 0
 		linear_velocity.y = 0
+		angular_velocity = 0.0
 		Debug.lives -=1
 		lives -= 1
 		$Timer.start()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bql8ckk10gv6q"]
 
-[ext_resource type="Script" path="res://scenes/fish_bone.gd" id="1_0kkqm"]
 [ext_resource type="Texture2D" uid="uid://dg7k4h4pj6jt0" path="res://sprites/sewer/fish.png" id="1_nwdpy"]
+[ext_resource type="Script" path="res://scripts/fish_bone.gd" id="1_sm158"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5h427"]
 atlas = ExtResource("1_nwdpy")
@@ -116,7 +116,7 @@ _data = {
 }
 
 [node name="FishBone" type="Node2D"]
-script = ExtResource("1_0kkqm")
+script = ExtResource("1_sm158")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

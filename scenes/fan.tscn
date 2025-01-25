@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmktpbye2iwo3"]
 
 [ext_resource type="Script" path="res://scripts/fan.gd" id="1_4o6sp"]
-[ext_resource type="Texture2D" uid="uid://cnro5wxe4eogx" path="res://sprites/fan/fans.png" id="2_vu6le"]
-[ext_resource type="Texture2D" uid="uid://clw30mfdypepa" path="res://sprites/fan/fan_middle.png" id="3_f6d7h"]
+[ext_resource type="Texture2D" uid="uid://g71bugl1qgmr" path="res://sprites/fan/fans.png" id="2_vu6le"]
+[ext_resource type="Texture2D" uid="uid://ccuu4binvvq2k" path="res://sprites/fan/fan_middle.png" id="3_f6d7h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ala2i"]
 radius = 19.0
