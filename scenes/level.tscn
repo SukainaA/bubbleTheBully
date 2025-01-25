@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=32 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
+[ext_resource type="Texture2D" uid="uid://dpnd3y1trh3u0" path="res://sprites/pushingP.png" id="13_ud1mc"]
+[ext_resource type="Script" path="res://scenes/p.gd" id="14_hpryc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -26,6 +28,113 @@ radius = 128.25
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_csawo"]
 a = Vector2(-4, -34)
 b = Vector2(5, 647)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aw3h"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khym4"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpht6"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8bcd"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6rf5"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4crm"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orctj"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5hf4"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfld5"]
+atlas = ExtResource("13_ud1mc")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nqfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aw3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khym4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpht6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8bcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6rf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4crm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orctj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5hf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfld5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="Animation" id="Animation_hkb3c"]
+resource_name = "pDisappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ywdqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lklki"]
+_data = {
+"RESET": SubResource("Animation_ywdqq"),
+"pDisappear": SubResource("Animation_hkb3c")
+}
 
 [node name="Level" type="Node2D"]
 
@@ -118,6 +227,19 @@ camera2 = NodePath("../Camera2D4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit2"]
 position = Vector2(-3, -17)
 shape = SubResource("SegmentShape2D_csawo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(278, 46)
+scale = Vector2(9.375, 9.375)
+sprite_frames = SubResource("SpriteFrames_4nqfh")
+autoplay = "default"
+frame_progress = 0.457229
+script = ExtResource("14_hpryc")
+
+[node name="pPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lklki")
+}
 
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
