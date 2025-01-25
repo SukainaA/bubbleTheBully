@@ -27,36 +27,11 @@ func bubble_pop():
 func _on_body_entered(body: Node) -> void:
 	print(lives)
 	if ! body.is_in_group("fan") && lives != 0:
-		if Debug.curr_scene == 0:
-			global_position.x = 150 * 1
-			global_position.y = 150
-			gravity_scale = 0
-			linear_velocity.x = 0
-			linear_velocity.y = 0
-		if Debug.curr_scene == 1:
-			global_position.x = 1275 * 1
-			global_position.y = 150
-			gravity_scale = 0
-			linear_velocity.x = 0
-			linear_velocity.y = 0
-		if Debug.curr_scene == 2:
-			global_position.x = 1275 * 2
-			global_position.y = 75
-			gravity_scale = 0
-			linear_velocity.x = 0
-			linear_velocity.y = 0
-		if Debug.curr_scene == 3:
-			global_position.x = 1275 * 3
-			global_position.y = 75
-			gravity_scale = 0
-			linear_velocity.x = 0
-			linear_velocity.y = 0
-		if Debug.curr_scene == 4:
-			global_position.x = 1275 * 4
-			global_position.y = 75
-			gravity_scale = 0
-			linear_velocity.x = 0
-			linear_velocity.y = 0
+		global_position.x = 100 + (1275 * Debug.curr_scene)
+		global_position.y = 90
+		gravity_scale = 0
+		linear_velocity.x = 0
+		linear_velocity.y = 0
 		Debug.lives -=1
 		lives -= 1
 		$Timer.start()

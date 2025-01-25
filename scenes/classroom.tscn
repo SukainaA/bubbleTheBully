@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dnp28v6smnuro"]
+[gd_scene load_steps=55 format=4 uid="uid://dnp28v6smnuro"]
 
 [ext_resource type="Texture2D" uid="uid://dp0un5ot3yckl" path="res://sprites/school_wall_floor.png" id="1_glrpm"]
 [ext_resource type="Texture2D" uid="uid://bmqrvy7fh3ksf" path="res://sprites/window.png" id="2_jad6f"]
@@ -147,6 +147,12 @@ size = Vector2(68, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5jwb"]
 size = Vector2(1200, 213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diovn"]
+size = Vector2(1209, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0asj7"]
+size = Vector2(20, 518)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8v6n"]
 atlas = ExtResource("9_vnrmb")
@@ -324,7 +330,6 @@ gravity = Vector2(0, 50)
 color = Color(0.839216, 1, 1, 1)
 
 [node name="ObstacleCollision" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleCollision"]
 position = Vector2(396, 340.5)
@@ -373,6 +378,14 @@ shape = SubResource("RectangleShape2D_jswgd")
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="ObstacleCollision"]
 position = Vector2(600, 612.5)
 shape = SubResource("RectangleShape2D_y5jwb")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="ObstacleCollision"]
+position = Vector2(595, -8)
+shape = SubResource("RectangleShape2D_diovn")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="ObstacleCollision"]
+position = Vector2(-9, 249)
+shape = SubResource("RectangleShape2D_0asj7")
 
 [node name="P" type="AnimatedSprite2D" parent="."]
 position = Vector2(232, 61)
