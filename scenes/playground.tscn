@@ -153,7 +153,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhole"]
-size = Vector2(11, 684)
+size = Vector2(1, 1359)
 
 [node name="Playground" type="Node2D"]
 position = Vector2(0, -25)
@@ -243,7 +243,7 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4.5, 332)
+position = Vector2(-4.5, 370.5)
 shape = SubResource("RectangleShape2D_vhole")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
