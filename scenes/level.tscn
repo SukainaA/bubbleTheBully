@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=18 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
+[ext_resource type="AudioStream" uid="uid://7sjiv4xxvwix" path="res://ggj25music.mp3" id="13_10p4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -118,6 +119,10 @@ camera2 = NodePath("../Camera2D4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit2"]
 position = Vector2(-3, -17)
 shape = SubResource("SegmentShape2D_csawo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_10p4v")
+autoplay = true
 
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs21swqxvy1h"]
+[gd_scene load_steps=8 format=3 uid="uid://bs21swqxvy1h"]
 
 [ext_resource type="Script" path="res://mainmenu.gd" id="1_b7wqe"]
 [ext_resource type="Script" path="res://color_rect.gd" id="2_410d5"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="3_gef18"]
 [ext_resource type="Script" path="res://label.gd" id="3_rerye"]
 [ext_resource type="Texture2D" uid="uid://ctmhdjbhc2mny" path="res://sprites/bubble-single.png" id="5_5u0ex"]
+[ext_resource type="AudioStream" uid="uid://bv8x23mh8mvm1" path="res://Bubbles Sound Effect [ ezmp3.cc ].mp3" id="7_fbj66"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -84,6 +85,11 @@ emission_sphere_radius = 128.0
 scale_amount_max = 3.0
 hue_variation_min = -0.11
 hue_variation_max = 0.2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fbj66")
+volume_db = -30.018
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
