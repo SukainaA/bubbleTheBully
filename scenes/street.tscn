@@ -14,9 +14,9 @@
 [ext_resource type="Script" path="res://scenes/car_spawner.gd" id="12_ii4at"]
 [ext_resource type="Shader" path="res://scenes/sewer.gdshader" id="13_miorx"]
 [ext_resource type="PackedScene" uid="uid://c68qgl137j7i4" path="res://scenes/lives.tscn" id="14_8hnpi"]
-[ext_resource type="Texture2D" uid="uid://cykvahcwm8psy" path="res://sprites/sewer/PIPE.png" id="15_388rr"]
-[ext_resource type="Texture2D" uid="uid://figxtsa23520" path="res://sprites/arrowDown.png" id="16_7tume"]
-[ext_resource type="Texture2D" uid="uid://d13ec4ren6um7" path="res://sprites/street/signConstruction.png" id="17_fcf2o"]
+[ext_resource type="Texture2D" uid="uid://bff8p8hr0oxwu" path="res://sprites/sewer/PIPE.png" id="15_388rr"]
+[ext_resource type="Texture2D" uid="uid://dvciyrh52u1ya" path="res://sprites/arrowDown.png" id="16_7tume"]
+[ext_resource type="Texture2D" uid="uid://bvvxu77dmllf3" path="res://sprites/street/signConstruction.png" id="17_fcf2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyfvm"]
 texture = ExtResource("2_dhrop")

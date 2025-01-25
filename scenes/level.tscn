@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://deqdxwrad1e6k" path="res://scenes/street.tscn" id="4_i2wj4"]
 [ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
 [ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
-[ext_resource type="Script" path="res://scripts/restart_button.gd" id="7_4c6cn"]
-[ext_resource type="FontFile" uid="uid://bq162f5a7nrf2" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
+[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
 [ext_resource type="Script" path="res://scenes/playground_exit.gd" id="13_8c6px"]
-[ext_resource type="AudioStream" uid="uid://b3bt6du3ffg30" path="res://ggj25music.mp3" id="13_10p4v"]
+[ext_resource type="AudioStream" uid="uid://7sjiv4xxvwix" path="res://ggj25music.mp3" id="13_10p4v"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="15_ir1no"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -84,18 +84,6 @@ position = Vector2(4157, 325)
 [node name="Camera2D5" type="Camera2D" parent="."]
 position = Vector2(5318, 338)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 1005.0
-offset_top = 50.0
-offset_right = 1121.0
-offset_bottom = 74.0
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_fwbkr")
-text = "Restart"
-script = ExtResource("7_4c6cn")
-
 [node name="StreetLimit" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
 position = Vector2(2328, 470)
 script = ExtResource("9_0wy3s")
@@ -138,9 +126,44 @@ shape = SubResource("RectangleShape2D_hqtc3")
 stream = ExtResource("13_10p4v")
 autoplay = true
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("15_ir1no")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.109804, 0.109804, 0.109804, 0.654902)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -29.0
+offset_right = 32.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_fwbkr")
+text = "Game Over"
+
+[node name="Button" type="Button" parent="CanvasLayer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_fwbkr")
+text = "Restart"
+
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
-[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="body_entered" from="StreetLimit" to="StreetLimit" method="_on_body_entered"]
 [connection signal="body_entered" from="sewerlimit" to="sewerlimit" method="_on_body_entered"]
 [connection signal="body_entered" from="sewerlimit2" to="sewerlimit2" method="_on_body_entered"]
 [connection signal="body_entered" from="playgroundExit" to="playgroundExit" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer2/VBoxContainer/Button" to="CanvasLayer2" method="_on_button_pressed"]
