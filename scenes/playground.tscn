@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b0876nmatrug3"]
+[gd_scene load_steps=47 format=4 uid="uid://b0876nmatrug3"]
 
 [ext_resource type="Texture2D" uid="uid://bwkrl53q0kb4l" path="res://sprites/street/sky.png" id="1_5xcj6"]
 [ext_resource type="Script" path="res://scenes/playground.gd" id="1_fp8xb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dqm0udc1i2q2k" path="res://sprites/playground/tiedBully.png" id="9_nsttn"]
 [ext_resource type="PackedScene" uid="uid://jbcxi64hmqms" path="res://scenes/paper_plane.tscn" id="10_hvl7w"]
 [ext_resource type="Texture2D" uid="uid://figxtsa23520" path="res://sprites/arrowDown.png" id="13_o0jbo"]
+[ext_resource type="PackedScene" uid="uid://c68qgl137j7i4" path="res://scenes/lives.tscn" id="14_kislc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbf17"]
 texture = ExtResource("2_mudoq")
@@ -324,6 +325,12 @@ scale = Vector2(4.125, 4.125)
 sprite_frames = SubResource("SpriteFrames_6g4c4")
 autoplay = "default"
 frame_progress = 0.302619
+
+[node name="Lives" parent="." instance=ExtResource("14_kislc")]
+offset_left = 957.0
+offset_top = 47.0
+offset_right = 957.0
+offset_bottom = 47.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

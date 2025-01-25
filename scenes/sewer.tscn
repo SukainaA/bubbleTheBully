@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://byphfn2np3o4c"]
+[gd_scene load_steps=25 format=4 uid="uid://byphfn2np3o4c"]
 
 [ext_resource type="Texture2D" uid="uid://d2vpienfxgs2a" path="res://sprites/sewer/WALL-Sheet.png" id="1_4nlbe"]
 [ext_resource type="Texture2D" uid="uid://dmdqvcbn21uw" path="res://sprites/sewer/FLOOR.png" id="2_mjcry"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" path="res://scenes/sewer.gdshader" id="7_gce8n"]
 [ext_resource type="PackedScene" uid="uid://bs0fgg1j2wkds" path="res://scenes/maus.tscn" id="7_kkdrp"]
 [ext_resource type="PackedScene" uid="uid://bql8ckk10gv6q" path="res://scenes/fish_bone.tscn" id="8_yley0"]
+[ext_resource type="PackedScene" uid="uid://c68qgl137j7i4" path="res://scenes/lives.tscn" id="10_f2ifo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr8t6"]
 texture = ExtResource("2_mjcry")
@@ -242,3 +243,15 @@ radial_accel_min = 29.56
 radial_accel_max = 29.56
 scale_amount_max = 6.91
 color = Color(0.156863, 0.607843, 0.164706, 0.301961)
+
+[node name="Lives" parent="." instance=ExtResource("10_f2ifo")]
+offset_left = 865.0
+offset_top = 22.0
+offset_right = 865.0
+offset_bottom = 22.0
+
+[node name="Lives2" parent="." instance=ExtResource("10_f2ifo")]
+offset_left = 2111.0
+offset_top = 35.0
+offset_right = 2111.0
+offset_bottom = 35.0

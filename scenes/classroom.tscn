@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://dnp28v6smnuro"]
+[gd_scene load_steps=53 format=4 uid="uid://dnp28v6smnuro"]
 
 [ext_resource type="Texture2D" uid="uid://dp0un5ot3yckl" path="res://sprites/school_wall_floor.png" id="1_glrpm"]
 [ext_resource type="Texture2D" uid="uid://bmqrvy7fh3ksf" path="res://sprites/window.png" id="2_jad6f"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://xl5dt1vw8y0c" path="res://sprites/ceiling_fan/ceilFan.png" id="8_uckm0"]
 [ext_resource type="Texture2D" uid="uid://dpnd3y1trh3u0" path="res://sprites/pushingP.png" id="9_vnrmb"]
 [ext_resource type="Script" path="res://scenes/animated_sprite_2d.gd" id="10_b3aek"]
+[ext_resource type="PackedScene" uid="uid://c68qgl137j7i4" path="res://scenes/lives.tscn" id="11_j6jxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b56fv"]
 texture = ExtResource("1_glrpm")
@@ -218,21 +219,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_bvm33"]
-resource_name = "pgone"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_vqo1m"]
 length = 0.001
 tracks/0/type = "value"
@@ -246,6 +232,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bvm33"]
+resource_name = "pgone"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xs2x5"]
@@ -385,3 +386,9 @@ script = ExtResource("10_b3aek")
 libraries = {
 "": SubResource("AnimationLibrary_xs2x5")
 }
+
+[node name="Lives" parent="." instance=ExtResource("11_j6jxb")]
+offset_left = 962.0
+offset_top = 12.0
+offset_right = 962.0
+offset_bottom = 12.0
