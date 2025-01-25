@@ -1,16 +1,18 @@
-[gd_scene load_steps=33 format=4 uid="uid://b0876nmatrug3"]
+[gd_scene load_steps=46 format=4 uid="uid://b0876nmatrug3"]
 
-[ext_resource type="Texture2D" uid="uid://dqqbv4eqaiq7b" path="res://sprites/street/sky.png" id="1_5xcj6"]
+[ext_resource type="Texture2D" uid="uid://bwkrl53q0kb4l" path="res://sprites/street/sky.png" id="1_5xcj6"]
 [ext_resource type="Script" path="res://scenes/playground.gd" id="1_fp8xb"]
-[ext_resource type="Texture2D" uid="uid://bnor20n6rkngt" path="res://sprites/playground/ground.png" id="2_mudoq"]
-[ext_resource type="Texture2D" uid="uid://dof18tk1ftfql" path="res://sprites/street/cloud.png" id="3_21rr7"]
-[ext_resource type="Texture2D" uid="uid://cl1kw1mtvvcgs" path="res://sprites/playground/lampPost.png" id="4_a8ocm"]
-[ext_resource type="Texture2D" uid="uid://cm430jax4tjlb" path="res://sprites/playground/slideMarygoround.png" id="5_8obrc"]
-[ext_resource type="Texture2D" uid="uid://c32ww705pqd5p" path="res://sprites/playground/schaukeln.png" id="6_oi18r"]
-[ext_resource type="Texture2D" uid="uid://yebhjv4g3g6w" path="res://sprites/playground/bush/airplane.png" id="7_3m1at"]
-[ext_resource type="Texture2D" uid="uid://c4l6fmf24js5c" path="res://sprites/playground/sewerExit.png" id="8_1mas6"]
-[ext_resource type="Texture2D" uid="uid://7oo2662cje4r" path="res://sprites/street/birb.png" id="9_3xhxl"]
+[ext_resource type="Texture2D" uid="uid://lfg5pesa4k56" path="res://sprites/playground/ground.png" id="2_mudoq"]
+[ext_resource type="Texture2D" uid="uid://tps1wlxqlrm" path="res://sprites/street/cloud.png" id="3_21rr7"]
+[ext_resource type="Texture2D" uid="uid://bkvwjtvypo6l" path="res://sprites/playground/lampPost.png" id="4_a8ocm"]
+[ext_resource type="Texture2D" uid="uid://clebyq474tu2f" path="res://sprites/playground/slideMarygoround.png" id="5_8obrc"]
+[ext_resource type="Texture2D" uid="uid://nyru81owxbl7" path="res://sprites/playground/schaukeln.png" id="6_oi18r"]
+[ext_resource type="Texture2D" uid="uid://cklcd5831iuoh" path="res://sprites/playground/bush/airplane.png" id="7_3m1at"]
+[ext_resource type="Texture2D" uid="uid://bqw3de33hylcl" path="res://sprites/playground/sewerExit.png" id="8_1mas6"]
+[ext_resource type="Texture2D" uid="uid://umnx24hra6dl" path="res://sprites/street/birb.png" id="9_3xhxl"]
+[ext_resource type="Texture2D" uid="uid://dqm0udc1i2q2k" path="res://sprites/playground/tiedBully.png" id="9_nsttn"]
 [ext_resource type="PackedScene" uid="uid://jbcxi64hmqms" path="res://scenes/paper_plane.tscn" id="10_hvl7w"]
+[ext_resource type="Texture2D" uid="uid://figxtsa23520" path="res://sprites/arrowDown.png" id="13_o0jbo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbf17"]
 texture = ExtResource("2_mudoq")
@@ -58,12 +60,18 @@ texture = ExtResource("7_3m1at")
 0:0/0 = 0
 1:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btgse"]
+texture = ExtResource("9_nsttn")
+0:0/0 = 0
+1:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_bsk32"]
 sources/0 = SubResource("TileSetAtlasSource_64p6e")
 sources/1 = SubResource("TileSetAtlasSource_ltvmm")
 sources/2 = SubResource("TileSetAtlasSource_etxva")
 sources/3 = SubResource("TileSetAtlasSource_ik2um")
 sources/4 = SubResource("TileSetAtlasSource_kivig")
+sources/5 = SubResource("TileSetAtlasSource_btgse")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jr8df"]
 
@@ -152,6 +160,73 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhole"]
+size = Vector2(1, 1359)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avdpe"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuh3l"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0ap8"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r483b"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng2ca"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onij4"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu1qu"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnxw6"]
+atlas = ExtResource("13_o0jbo")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6g4c4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avdpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuh3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0ap8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r483b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng2ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onij4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu1qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnxw6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
 [node name="Playground" type="Node2D"]
 position = Vector2(0, -25)
 script = ExtResource("1_fp8xb")
@@ -170,7 +245,7 @@ tile_set = SubResource("TileSet_3wkuk")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(78, 86)
 scale = Vector2(6, 6)
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAALAP//AAAAAAAAAAAJAAAAAAACAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAADAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAADAP//AAACAAAAAAAEAP//AAADAAAAAAD+/wIAAAADAAAAAAALAAIAAAADAAAAAAAKAAIAAQACAAAAAAADAAIAAAAEAAAAAAAEAAIAAAACAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQABAAAAAAAKAAQAAQABAAAAAAACAAUAAQAAAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAACAAIAAQACAAAAAAAIAAUAAgABAAAAAAAJAAQAAgAAAAAAABAHAAQAAwABAAAAAAAGAAQAAwAAAAAAAAD//wUABAAAAAAAAAADAAQABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAALAP//AAAAAAAAAAAJAAAAAAACAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAADAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAADAP//AAACAAAAAAAEAP//AAADAAAAAAD+/wIAAAADAAAAAAALAAIAAAADAAAAAAAKAAIAAQACAAAAAAADAAIAAAAEAAAAAAAEAAIAAAACAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQABAAAAAAAKAAQAAQABAAAAAAACAAUAAQAAAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAACAAIAAQACAAAAAAAHAAQAAwABAAAAAAAGAAQAAwAAAAAAAAD//wUABAAAAAAAAAADAAQABAAAAAAAAAAIAAQAAgAAAAAAAAAJAAUABQAAAAAAAAAJAAQABQABAAAAAAAEAAUAAgABAAAAAAA=")
 tile_set = SubResource("TileSet_bsk32")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -227,11 +302,9 @@ sprite_frames = SubResource("SpriteFrames_vdcgb")
 autoplay = "default"
 
 [node name="PaperPlane" parent="." instance=ExtResource("10_hvl7w")]
-visible = false
 position = Vector2(1222, 156)
 
 [node name="PlaneSpawner" type="Node2D" parent="."]
-visible = false
 position = Vector2(1225, 5)
 
 [node name="Timer" type="Timer" parent="."]
@@ -239,4 +312,18 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.5, 370.5)
+shape = SubResource("RectangleShape2D_vhole")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1015, 418)
+scale = Vector2(4.125, 4.125)
+sprite_frames = SubResource("SpriteFrames_6g4c4")
+autoplay = "default"
+frame_progress = 0.302619
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
