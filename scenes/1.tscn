@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://6np6v2gge5nu"]
+
+[ext_resource type="Texture2D" uid="uid://bx84n5i0eodfe" path="res://sprites/animations/1.png" id="1_rw3md"]
+[ext_resource type="Script" path="res://scenes/1.gd" id="1_xnaos"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c8fj"]
+atlas = ExtResource("1_rw3md")
+region = Rect2(0, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uppwc"]
+atlas = ExtResource("1_rw3md")
+region = Rect2(800, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3btf"]
+atlas = ExtResource("1_rw3md")
+region = Rect2(160, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ddde"]
+atlas = ExtResource("1_rw3md")
+region = Rect2(320, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08car"]
+atlas = ExtResource("1_rw3md")
+region = Rect2(480, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq78s"]
+atlas = ExtResource("1_rw3md")
+region = Rect2(640, 0, 160, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xuuo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uppwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3btf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ddde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08car")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq78s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8fj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="1" type="Node2D"]
+script = ExtResource("1_xnaos")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.889, 326.5)
+scale = Vector2(7.21111, 7.21111)
+sprite_frames = SubResource("SpriteFrames_4xuuo")
+autoplay = "default"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
