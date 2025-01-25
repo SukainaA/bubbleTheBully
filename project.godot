@@ -29,6 +29,7 @@ mouse_cursor/custom_image="res://sprites/fan/fan_middle.png"
 
 bubble=""
 fan=""
+projectile=""
 
 [input]
 

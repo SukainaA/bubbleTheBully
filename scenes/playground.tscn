@@ -1,15 +1,15 @@
-[gd_scene load_steps=33 format=4 uid="uid://b0876nmatrug3"]
+[gd_scene load_steps=34 format=4 uid="uid://b0876nmatrug3"]
 
-[ext_resource type="Texture2D" uid="uid://dqqbv4eqaiq7b" path="res://sprites/street/sky.png" id="1_5xcj6"]
+[ext_resource type="Texture2D" uid="uid://bwkrl53q0kb4l" path="res://sprites/street/sky.png" id="1_5xcj6"]
 [ext_resource type="Script" path="res://scenes/playground.gd" id="1_fp8xb"]
-[ext_resource type="Texture2D" uid="uid://bnor20n6rkngt" path="res://sprites/playground/ground.png" id="2_mudoq"]
-[ext_resource type="Texture2D" uid="uid://dof18tk1ftfql" path="res://sprites/street/cloud.png" id="3_21rr7"]
-[ext_resource type="Texture2D" uid="uid://cl1kw1mtvvcgs" path="res://sprites/playground/lampPost.png" id="4_a8ocm"]
-[ext_resource type="Texture2D" uid="uid://cm430jax4tjlb" path="res://sprites/playground/slideMarygoround.png" id="5_8obrc"]
-[ext_resource type="Texture2D" uid="uid://c32ww705pqd5p" path="res://sprites/playground/schaukeln.png" id="6_oi18r"]
-[ext_resource type="Texture2D" uid="uid://yebhjv4g3g6w" path="res://sprites/playground/bush/airplane.png" id="7_3m1at"]
-[ext_resource type="Texture2D" uid="uid://c4l6fmf24js5c" path="res://sprites/playground/sewerExit.png" id="8_1mas6"]
-[ext_resource type="Texture2D" uid="uid://7oo2662cje4r" path="res://sprites/street/birb.png" id="9_3xhxl"]
+[ext_resource type="Texture2D" uid="uid://lfg5pesa4k56" path="res://sprites/playground/ground.png" id="2_mudoq"]
+[ext_resource type="Texture2D" uid="uid://tps1wlxqlrm" path="res://sprites/street/cloud.png" id="3_21rr7"]
+[ext_resource type="Texture2D" uid="uid://bkvwjtvypo6l" path="res://sprites/playground/lampPost.png" id="4_a8ocm"]
+[ext_resource type="Texture2D" uid="uid://clebyq474tu2f" path="res://sprites/playground/slideMarygoround.png" id="5_8obrc"]
+[ext_resource type="Texture2D" uid="uid://nyru81owxbl7" path="res://sprites/playground/schaukeln.png" id="6_oi18r"]
+[ext_resource type="Texture2D" uid="uid://cklcd5831iuoh" path="res://sprites/playground/bush/airplane.png" id="7_3m1at"]
+[ext_resource type="Texture2D" uid="uid://bqw3de33hylcl" path="res://sprites/playground/sewerExit.png" id="8_1mas6"]
+[ext_resource type="Texture2D" uid="uid://umnx24hra6dl" path="res://sprites/street/birb.png" id="9_3xhxl"]
 [ext_resource type="PackedScene" uid="uid://jbcxi64hmqms" path="res://scenes/paper_plane.tscn" id="10_hvl7w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbf17"]
@@ -152,6 +152,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhole"]
+size = Vector2(11, 684)
+
 [node name="Playground" type="Node2D"]
 position = Vector2(0, -25)
 script = ExtResource("1_fp8xb")
@@ -227,11 +230,9 @@ sprite_frames = SubResource("SpriteFrames_vdcgb")
 autoplay = "default"
 
 [node name="PaperPlane" parent="." instance=ExtResource("10_hvl7w")]
-visible = false
 position = Vector2(1222, 156)
 
 [node name="PlaneSpawner" type="Node2D" parent="."]
-visible = false
 position = Vector2(1225, 5)
 
 [node name="Timer" type="Timer" parent="."]
@@ -239,4 +240,11 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.5, 332)
+shape = SubResource("RectangleShape2D_vhole")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
