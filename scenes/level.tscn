@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=21 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
@@ -8,13 +8,12 @@
 [ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
 [ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
 [ext_resource type="Script" path="res://scripts/restart_button.gd" id="7_4c6cn"]
-[ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
+[ext_resource type="FontFile" uid="uid://bq162f5a7nrf2" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
 [ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 [ext_resource type="Script" path="res://scripts/sewerlimit_2.gd" id="12_4hror"]
 [ext_resource type="Script" path="res://scenes/playground_exit.gd" id="13_8c6px"]
-[ext_resource type="AudioStream" uid="uid://7sjiv4xxvwix" path="res://ggj25music.mp3" id="13_10p4v"]
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="15_0itm5"]
+[ext_resource type="AudioStream" uid="uid://b3bt6du3ffg30" path="res://ggj25music.mp3" id="13_10p4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -24,11 +23,16 @@ a = Vector2(-3, 714)
 b = Vector2(0, 2)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fb4io"]
-radius = 128.25
+radius = 49.0408
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_csawo"]
-a = Vector2(-4, -34)
-b = Vector2(5, 647)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qdko"]
+radius = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnwc3"]
+radius = 41.1947
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtc3"]
+size = Vector2(57, 122)
 
 [node name="Level" type="Node2D"]
 
@@ -83,10 +87,10 @@ position = Vector2(5318, 338)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 23.0
-offset_top = 16.0
-offset_right = 139.0
-offset_bottom = 40.0
+offset_left = 1005.0
+offset_top = 50.0
+offset_right = 1121.0
+offset_bottom = 74.0
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_fwbkr")
 text = "Restart"
@@ -99,7 +103,7 @@ camera1 = NodePath("../Camera2D3")
 camera2 = NodePath("../Camera2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StreetLimit"]
-position = Vector2(-48, -37)
+position = Vector2(-10, 61)
 shape = SubResource("CircleShape2D_fb4io")
 
 [node name="sewerlimit" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
@@ -109,8 +113,8 @@ camera1 = NodePath("../Camera2D4")
 camera2 = NodePath("../Camera2D3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit"]
-position = Vector2(-3, -17)
-shape = SubResource("SegmentShape2D_csawo")
+position = Vector2(-237, 286)
+shape = SubResource("CircleShape2D_6qdko")
 
 [node name="sewerlimit2" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
 position = Vector2(4730, 17)
@@ -119,56 +123,20 @@ camera1 = NodePath("../Camera2D5")
 camera2 = NodePath("../Camera2D4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit2"]
-position = Vector2(-3, -17)
-shape = SubResource("SegmentShape2D_csawo")
+position = Vector2(-94, 420)
+shape = SubResource("CircleShape2D_hnwc3")
 
 [node name="playgroundExit" type="Area2D" parent="."]
 position = Vector2(4730, 17)
 script = ExtResource("13_8c6px")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playgroundExit"]
-position = Vector2(1031, 468)
-shape = SubResource("SegmentShape2D_csawo")
+position = Vector2(1023.5, 503)
+shape = SubResource("RectangleShape2D_hqtc3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_10p4v")
 autoplay = true
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("15_0itm5")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.380392)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="CanvasLayer2/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("7_fwbkr")
-theme_override_font_sizes/font_size = 30
-text = "Game Over"
-
-[node name="Button" type="Button" parent="CanvasLayer2/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("7_fwbkr")
-text = "Restart"
 
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
@@ -176,4 +144,3 @@ text = "Restart"
 [connection signal="body_entered" from="sewerlimit" to="sewerlimit" method="_on_body_entered"]
 [connection signal="body_entered" from="sewerlimit2" to="sewerlimit2" method="_on_body_entered"]
 [connection signal="body_entered" from="playgroundExit" to="playgroundExit" method="_on_body_entered"]
-[connection signal="pressed" from="CanvasLayer2/VBoxContainer/Button" to="CanvasLayer2" method="_on_button_pressed"]

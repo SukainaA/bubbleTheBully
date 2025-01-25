@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://deqdxwrad1e6k"]
+[gd_scene load_steps=55 format=4 uid="uid://deqdxwrad1e6k"]
 
 [ext_resource type="Texture2D" uid="uid://dqqbv4eqaiq7b" path="res://sprites/street/sky.png" id="1_w4pcf"]
 [ext_resource type="Texture2D" uid="uid://mslclio2eqhh" path="res://sprites/street/bench.png" id="2_dhrop"]
@@ -14,6 +14,9 @@
 [ext_resource type="Script" path="res://scenes/car_spawner.gd" id="12_ii4at"]
 [ext_resource type="Shader" path="res://scenes/sewer.gdshader" id="13_miorx"]
 [ext_resource type="PackedScene" uid="uid://c68qgl137j7i4" path="res://scenes/lives.tscn" id="14_8hnpi"]
+[ext_resource type="Texture2D" uid="uid://cykvahcwm8psy" path="res://sprites/sewer/PIPE.png" id="15_388rr"]
+[ext_resource type="Texture2D" uid="uid://figxtsa23520" path="res://sprites/arrowDown.png" id="16_7tume"]
+[ext_resource type="Texture2D" uid="uid://d13ec4ren6um7" path="res://sprites/street/signConstruction.png" id="17_fcf2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyfvm"]
 texture = ExtResource("2_dhrop")
@@ -146,6 +149,12 @@ size = Vector2(64, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwe1b"]
 size = Vector2(64, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txna4"]
+size = Vector2(20, 729)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgdwh"]
+size = Vector2(1208, 20)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jgtjc"]
 shader = ExtResource("13_miorx")
 shader_parameter/angle = -0.14659
@@ -161,6 +170,74 @@ shader_parameter/ray2_intensity = 0.215
 shader_parameter/ray_color = Color(0.34902, 0.635294, 0.352941, 0.156863)
 shader_parameter/hdr = false
 shader_parameter/seed = 0.935
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cety2"]
+atlas = ExtResource("15_388rr")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avdpe"]
+atlas = ExtResource("16_7tume")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuh3l"]
+atlas = ExtResource("16_7tume")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0ap8"]
+atlas = ExtResource("16_7tume")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r483b"]
+atlas = ExtResource("16_7tume")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng2ca"]
+atlas = ExtResource("16_7tume")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onij4"]
+atlas = ExtResource("16_7tume")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu1qu"]
+atlas = ExtResource("16_7tume")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnxw6"]
+atlas = ExtResource("16_7tume")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6sbvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avdpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuh3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0ap8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r483b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng2ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onij4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu1qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnxw6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
 
 [node name="Street" type="Node2D"]
 
@@ -234,6 +311,14 @@ shape = SubResource("RectangleShape2D_4gyqf")
 position = Vector2(992, 488)
 shape = SubResource("RectangleShape2D_iwe1b")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1211, 363)
+shape = SubResource("RectangleShape2D_txna4")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(594, 553)
+shape = SubResource("RectangleShape2D_wgdwh")
+
 [node name="CarTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
@@ -259,5 +344,21 @@ offset_left = 858.0
 offset_top = 18.0
 offset_right = 858.0
 offset_bottom = 18.0
+
+[node name="sewer" type="Sprite2D" parent="."]
+position = Vector2(1095, 592)
+scale = Vector2(6.875, 6.875)
+texture = SubResource("AtlasTexture_cety2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1091, 496)
+scale = Vector2(4.125, 4.125)
+sprite_frames = SubResource("SpriteFrames_6sbvf")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1047, 587)
+scale = Vector2(6.34374, 7.88682)
+texture = ExtResource("17_fcf2o")
 
 [connection signal="timeout" from="CarTimer" to="CarSpawner" method="_on_timer_timeout"]

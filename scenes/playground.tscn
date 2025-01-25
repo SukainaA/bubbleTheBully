@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://b0876nmatrug3"]
+[gd_scene load_steps=49 format=4 uid="uid://b0876nmatrug3"]
 
 [ext_resource type="Texture2D" uid="uid://dqqbv4eqaiq7b" path="res://sprites/street/sky.png" id="1_5xcj6"]
 [ext_resource type="Script" path="res://scenes/playground.gd" id="1_fp8xb"]
@@ -228,6 +228,12 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cojw1"]
+size = Vector2(6, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcmc3"]
+size = Vector2(146, 71)
+
 [node name="Playground" type="Node2D"]
 position = Vector2(0, -25)
 script = ExtResource("1_fp8xb")
@@ -246,7 +252,7 @@ tile_set = SubResource("TileSet_3wkuk")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(78, 86)
 scale = Vector2(6, 6)
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAALAP//AAAAAAAAAAAJAAAAAAACAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAADAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAADAP//AAACAAAAAAAEAP//AAADAAAAAAD+/wIAAAADAAAAAAALAAIAAAADAAAAAAAKAAIAAQACAAAAAAADAAIAAAAEAAAAAAAEAAIAAAACAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQABAAAAAAAKAAQAAQABAAAAAAACAAUAAQAAAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAACAAIAAQACAAAAAAAHAAQAAwABAAAAAAAGAAQAAwAAAAAAAAD//wUABAAAAAAAAAADAAQABAAAAAAAAAAIAAQAAgAAAAAAAAAJAAUABQAAAAAAAAAJAAQABQABAAAAAAAEAAUAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAALAP//AAAAAAAAAAAJAAAAAAACAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAADAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAADAP//AAACAAAAAAAEAP//AAADAAAAAAD+/wIAAAADAAAAAAALAAIAAAADAAAAAAAKAAIAAQACAAAAAAADAAIAAAAEAAAAAAAEAAIAAAACAAAAAAAKAAUAAQAAAAAAAAAKAAMAAQABAAAAAAAKAAQAAQABAAAAAAACAAUAAQAAAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAACAAIAAQACAAAAAAD//wUABAAAAAAAAAADAAQABAAAAAAAAAAIAAQAAgAAAAAAAAAJAAUABQAAAAAAAAAJAAQABQABAAAAAAAEAAUAAgABAAAAAAAEAAQAAwAAAAAAAAAFAAQAAwABAAAAAAA=")
 tile_set = SubResource("TileSet_bsk32")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -331,6 +337,23 @@ offset_left = 957.0
 offset_top = 47.0
 offset_right = 957.0
 offset_bottom = 47.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-3, 421, 103, 421, 116, 434, 117, 551, 103, 578, 51, 581, 54, 597, 77, 624, 67, 653, 36, 664, 2, 663, 3, 670, 86, 670, 90, 582, 305, 587, 306, 361, 288, 340, 289, 303, 301, 289, 336, 288, 346, 301, 347, 343, 330, 363, 331, 642, 331, 587, 383, 566, 373, 513, 402, 497, 438, 497, 455, 523, 459, 535, 481, 489, 622, 489, 639, 547, 607, 563, 463, 566, 464, 588, 855, 590, 858, 478, 889, 485, 923, 546, 943, 560, 942, 570, 903, 570, 906, 598, 1075, 597, 1074, 361, 1057, 339, 1057, 300, 1071, 289, 1102, 290, 1113, 304, 1114, 345, 1100, 362, 1098, 645, 1099, 598, 1152, 597, 1148, 704, -35, 723)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7, 205)
+shape = SubResource("RectangleShape2D_cojw1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1225, 25.5)
+shape = SubResource("RectangleShape2D_rcmc3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1190, 342)
+shape = SubResource("RectangleShape2D_rcmc3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
