@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://myv62j3fbjmm"]
+[gd_scene load_steps=16 format=3 uid="uid://myv62j3fbjmm"]
 
 [ext_resource type="PackedScene" uid="uid://dd70jw83eedjk" path="res://scenes/bubble.tscn" id="1_2e6f3"]
 [ext_resource type="PackedScene" uid="uid://dnp28v6smnuro" path="res://scenes/classroom.tscn" id="1_ew3i4"]
 [ext_resource type="PackedScene" uid="uid://bmktpbye2iwo3" path="res://scenes/fan.tscn" id="2_sm62d"]
+[ext_resource type="PackedScene" uid="uid://b0876nmatrug3" path="res://scenes/playground.tscn" id="3_t2del"]
 [ext_resource type="PackedScene" uid="uid://deqdxwrad1e6k" path="res://scenes/street.tscn" id="4_i2wj4"]
 [ext_resource type="Script" path="res://classroom_area.gd" id="5_rlaju"]
 [ext_resource type="PackedScene" uid="uid://byphfn2np3o4c" path="res://scenes/sewer.tscn" id="6_6svhg"]
 [ext_resource type="Script" path="res://scripts/restart_button.gd" id="7_4c6cn"]
 [ext_resource type="FontFile" uid="uid://ctcue00wcq673" path="res://sprites/PixelOperator8-Bold.ttf" id="7_fwbkr"]
 [ext_resource type="Script" path="res://scripts/street_limit.gd" id="9_0wy3s"]
+[ext_resource type="Script" path="res://scripts/sewerlimit.gd" id="10_xjxul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7vd"]
 size = Vector2(1134, 79)
@@ -20,7 +22,14 @@ b = Vector2(0, 2)
 [sub_resource type="CircleShape2D" id="CircleShape2D_fb4io"]
 radius = 128.25
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_csawo"]
+a = Vector2(-4, -34)
+b = Vector2(5, 647)
+
 [node name="Level" type="Node2D"]
+
+[node name="Playground" parent="." instance=ExtResource("3_t2del")]
+position = Vector2(4743, -12)
 
 [node name="Classroom" parent="." instance=ExtResource("1_ew3i4")]
 position = Vector2(0, -4)
@@ -62,7 +71,10 @@ position = Vector2(1804, 323)
 position = Vector2(3013, 326)
 
 [node name="Camera2D4" type="Camera2D" parent="."]
-position = Vector2(4169, 326)
+position = Vector2(4157, 325)
+
+[node name="Camera2D5" type="Camera2D" parent="."]
+position = Vector2(5318, 338)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -86,6 +98,28 @@ camera2 = NodePath("../Camera2D2")
 position = Vector2(-48, -37)
 shape = SubResource("CircleShape2D_fb4io")
 
+[node name="sewerlimit" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(3596, 25)
+script = ExtResource("10_xjxul")
+camera1 = NodePath("../Camera2D4")
+camera2 = NodePath("../Camera2D3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit"]
+position = Vector2(-3, -17)
+shape = SubResource("SegmentShape2D_csawo")
+
+[node name="sewerlimit2" type="Area2D" parent="." node_paths=PackedStringArray("camera1", "camera2")]
+position = Vector2(4730, 17)
+script = ExtResource("10_xjxul")
+camera1 = NodePath("../Camera2D5")
+camera2 = NodePath("../Camera2D4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sewerlimit2"]
+position = Vector2(-3, -17)
+shape = SubResource("SegmentShape2D_csawo")
+
 [connection signal="body_entered" from="classroom_limit" to="classroom_limit" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="body_entered" from="StreetLimit" to="StreetLimit" method="_on_body_entered"]
+[connection signal="body_entered" from="sewerlimit" to="sewerlimit" method="_on_body_entered"]
+[connection signal="body_entered" from="sewerlimit2" to="sewerlimit2" method="_on_body_entered"]
